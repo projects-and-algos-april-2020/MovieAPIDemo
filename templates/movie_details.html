@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet"> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hello ORMs</title>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h2>{{ movie['title'] }} ({{movie['release_date'].split('-')[0]}})</h2>
+            <hr>
+            <h4 class="accent-text">{{ movie['tagline'] }}</h4>
+            <img class="movie-poster" src="http://image.tmdb.org/t/p/w500{{movie['poster_path']}}" alt="{{movie['title']}} Poster">
+            <div class="movie-overview">
+                <h3>Overview</h3>
+                <blockquote>{{ movie['overview'] }}</blockquote>
+                <h3></h3>
+                <h3>Runtime</h3>
+                <p>{{ movie['runtime'] }} Minutes</p>
+                <h3>Average Rating</h3>
+                <p>{{ movie['vote_average'] }}/10</p>
+            </div>
+        </section>
+        <section>
+            <h2>Reviews</h2>
+            <ul>
+                {% for review in reviews %}
+                    <li>{{ review['content'] }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

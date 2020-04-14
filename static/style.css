@@ -1,0 +1,36 @@
+body {
+    padding: 20px;
+    background-color: rgb(119, 119, 119);
+}
+.log-reg > section, .tables > section {
+    width: 45%;
+    display: inline-block;
+}
+section {
+    vertical-align: top;
+    margin: 0 25px;
+    background-color: #acabab;
+    border-radius: 10px;
+    padding: 20px;
+}
+.tables > section {
+    height: 500px;
+    overflow-y: scroll;
+}
+header > *, .accent-text {
+    color: lime;
+    text-shadow: 1px 1px 1px black;
+}
+header > *, .branded-font {
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+.movie-poster {
+    display: inline-block;
+    width: 45%;
+}
+.movie-overview {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    margin: 20px;
+}
